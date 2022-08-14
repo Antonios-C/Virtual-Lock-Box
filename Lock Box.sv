@@ -1,22 +1,20 @@
 `default_nettype none
 
 module top (
-  // I/O ports
+  
   input  logic hz100, reset,
   input  logic [20:0] pb,
   output logic [7:0] left, right,
          ss7, ss6, ss5, ss4, ss3, ss2, ss1, ss0,
   output logic red, green, blue,
 
-  // Ports from/to UART
+
   output logic [7:0] txdata,
   input  logic [7:0] rxdata,
   output logic txclk, rxclk,
   input  logic txready, rxready
 );
 
- 
-  
   logic W_PRESSED, X_PRESSED, Y_PRESSED;
   assign W_PRESSED = pb[16];
   assign X_PRESSED = pb[17];
@@ -104,7 +102,7 @@ module top (
   ssdec s4 (.in(cbo[19:16]), .enable(|cbo[31:16]), .out(buf_ss[34:28]));
   ssdec s5 (.in(cbo[23:20]), .enable(|cbo[31:20]), .out(buf_ss[41:35]));
   ssdec s6 (.in(cbo[27:24]), .enable(|cbo[31:24]), .out(buf_ss[48:42]));
-  ssdec s7 (.in(cbo[31:28]), .enable(|cbo[31:28]), .out(buf_ss[55:49])); // 55 49
+  ssdec s7 (.in(cbo[31:28]), .enable(|cbo[31:28]), .out(buf_ss[55:49])); 
 
 
 
@@ -120,9 +118,9 @@ output logic [31:0]out
 logic [31:0]outN;
 
 always_ff @(posedge clk, posedge rst) begin 
-  if(rst) //clear - reset
+  if(rst) 
     out <= 32'b0;
-  else if(clr) //check passcode for later
+  else if(clr) 
     out <= 32'b0;
   else
     out <= outN;
