@@ -1,5 +1,4 @@
 `default_nettype none
-// Empty top module
 
 module top (
   // I/O ports
@@ -16,8 +15,7 @@ module top (
   input  logic txready, rxready
 );
 
-  // Your code goes here...
-  // display charbuf
+ 
   
   logic W_PRESSED, X_PRESSED, Y_PRESSED;
   assign W_PRESSED = pb[16];
@@ -75,64 +73,6 @@ module top (
   
   always_comb begin
     if(is_empty)begin
-      /*
-      if(dcl_fsm == INIT) begin
-        ss0 = 8'b11001100;
-        ss1 = 8'b11001100;
-        ss2 = 8'b11001100;
-        ss3 = 8'b11001100;
-        ss4 = 8'b11001100;
-        ss5 = 8'b11001100;
-        ss6 = 8'b11001100;
-        ss7 = 8'b11001100;
-      end
-        //{ss7,ss6,ss5,ss4,ss3,ss2,ss1,ss0} = STR_OPEN;
-      else if(dcl_fsm == OPEN) begin
-        ss0 = 8'b11001100;
-        ss1 = 8'b11001100;
-        ss2 = 8'b11001100;
-        ss3 = 8'b11001100;
-        ss4 = 8'b11001100;
-        ss5 = 8'b11001100;
-        ss6 = 8'b11001100;
-        ss7 = 8'b11001100;
-      end
-        //{ss7,ss6,ss5,ss4,ss3,ss2,ss1,ss0} = STR_OPEN;
-      else if(dcl_fsm == SECURE) begin
-        //{ss7,ss6,ss5,ss4,ss3,ss2,ss1,ss0} = STR_SECURE;
-        ss0 = 8'b11001100;
-        ss1 = 8'b11001100;
-        ss2 = 8'b11001100;
-        ss3 = 8'b11001100;
-        ss4 = 8'b11001100;
-        ss5 = 8'b11001100;
-        ss6 = 8'b11001100;
-        ss7 = 8'b11001100;
-      end
-      else if(dcl_fsm == ALARM) begin
-        //{ss7,ss6,ss5,ss4,ss3,ss2,ss1,ss0} = STR_CALL_911;
-        ss0 = 8'b11001100;
-        ss1 = 8'b11001100;
-        ss2 = 8'b11001100;
-        ss3 = 8'b11001100;
-        ss4 = 8'b11001100;
-        ss5 = 8'b11001100;
-        ss6 = 8'b11001100;
-        ss7 = 8'b11001100;
-      end
-      else begin
-        //{ss7,ss6,ss5,ss4,ss3,ss2,ss1,ss0} = 64'b0;
-        ss0 = 8'b11001100;
-        ss1 = 8'b11001100;
-        ss2 = 8'b11001100;
-        ss3 = 8'b11001100;
-        ss4 = 8'b11001100;
-        ss5 = 8'b11001100;
-        ss6 = 8'b11001100;
-        ss7 = 8'b11001100;
-      end
-      */
-        
       case(dcl_fsm) 
         INIT : {ss7,ss6,ss5,ss4,ss3,ss2,ss1,ss0} = STR_OPEN;
         OPEN : {ss7,ss6,ss5,ss4,ss3,ss2,ss1,ss0} = STR_OPEN;
@@ -166,16 +106,9 @@ module top (
   ssdec s6 (.in(cbo[27:24]), .enable(|cbo[31:24]), .out(buf_ss[48:42]));
   ssdec s7 (.in(cbo[31:28]), .enable(|cbo[31:28]), .out(buf_ss[55:49])); // 55 49
 
-  // for testing only - comment out the lines below when starting the lab.
-  //assign red = is_empty; //-- MAYBE
-  //assign {ss7[6:0], ss6[6:0], ss5[6:0], ss4[6:0], ss3[6:0], ss2[6:0], ss1[6:0], ss0[6:0]} = buf_ss;
-  
-  
-  
+
 
 endmodule
-
-// Add more modules down here...
 
 module charbuf(
 input logic clk, rst, enable, clr, bksp, is_ctrl,
@@ -286,9 +219,4 @@ module clock_4hz(
   end 
 endmodule
 
-//count until 25
-  //reset count to 1
-  //inverse blink
-  
-//countil 12 
- // inverse blink
+
