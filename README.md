@@ -4,6 +4,9 @@ This program was written, tested and compiled within a virtual 7 segment display
 
 Simulator used : https://github.com/norandomtechie/ece270-simulator
 
+![image](https://user-images.githubusercontent.com/96555013/184593988-d0664d27-d653-4eff-bd5c-0f8d95ee7a97.png)
+
+
 ## General Functions
 
 Within the program you can set a passcode, lock the box and unlock the box with said passcode. At the start of the program you are prompted to set a passcode
@@ -16,7 +19,7 @@ passcode is entered an "alarm" will go off.
 2) Green : Unlocked box
 3) Blue : Locked box 
 
-### Button Purposes 
+### Button Purposes: 
 
 1) Buttons 0 - "F" can be pressed to enter/set passcode 
 2) Button "X" is backspace button incase you want to delete the last character 
