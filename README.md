@@ -4,6 +4,7 @@ This program was written, tested and compiled within a virtual 7 segment display
 
 Simulator used : https://github.com/norandomtechie/ece270-simulator
 
+## Image of Simulator
 ![image](https://user-images.githubusercontent.com/96555013/184593988-d0664d27-d653-4eff-bd5c-0f8d95ee7a97.png)
 
 
