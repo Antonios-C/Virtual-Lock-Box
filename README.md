@@ -18,6 +18,7 @@ passcode is entered an "alarm" will go off.
 1) Red : Alarm going off
 2) Green : Unlocked box
 3) Blue : Locked box 
+4) No Light : User needs to set passcode
 
 ### Button Purposes: 
 
@@ -27,3 +28,6 @@ passcode is entered an "alarm" will go off.
 4) Button "Y" locks the box
 
 ## Demo 
+
+https://user-images.githubusercontent.com/96555013/184594631-0d182367-5652-49a3-8472-344922906825.mp4
+
